@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Movie Gifs Galore</title>
-</head>
-<body>
-<!-- Hello World -->
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <!-- Hello World -->
+    <div class="row">
+      <div class="col-md-8 buttonbox" id="buttonBox"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-8" id="gifBox">
+        This is gifs
+      </div>
+      <div class="col-md-4">
+        <form>
+            <span id="search">
+                Search for Gifs here! <input id="searchinput" type="text"/><input id="searchbutton" value="search" type="submit">
+            </span>
+        </form>
+      </div>
+    </div>
+    <script src="logic.js"></script>
+  </body>
 </html>
