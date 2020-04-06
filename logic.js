@@ -9,6 +9,7 @@ var topics = ["Hustlers",
 "The Irishman",
 "Pain & Glory",
 ]
+var searchterm="";
 $(document).ready(function(){
     for (let i = 0; i < topics.length; i++) {
         var buttons = $("<button class='moviebutton'>" + topics[i] + "</button>");
@@ -20,20 +21,16 @@ $(document).ready(function(){
 $(document).on('click', '.moviebutton', function(){ 
     var text = $(this).text();
     $("button").val(text);
-    console.log(text)
+    // console.log(text)
+    searchterm=text.toLowerCase()
+    console.log(searchterm);
+
+
+    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + searchterm + "&api_key=wQJXIAQWtZyJ9vxRJKD1Kly5kx8U1jQF&limit=5");
+    xhr.done(function(data) { console.log("success got data", data)});
+    
+    
+
+
+
 });
-
-
-//     var queryURL= "api.giphy.com/v1/gifs/search?q=" + searchterm + "&api_key=wQJXIAQWtZyJ9vxRJKD1Kly5kx8U1jQF&limit=5";
-//     console.log(searchterm);
-//     $.ajax({
-//         url: queryURL,
-//         mathod: "GET"
-//     })
-//     .then(function(response){
-//         var results =response.data;
-
-//     })
-
-
-// });
