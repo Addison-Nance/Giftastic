@@ -34,12 +34,12 @@ $(document).on('click', '.moviebutton', function(){
         console.log(response)
         for (let i = 0; i< response.data.length; i++) {
             console.log(response.data[i].url);
-            var img = $('<img id="dynamic">'); //Equivalent: $(document.createElement('img'))
-            img.attr('src', response.data[i].url);
-            img.appendTo('#gifbox');
+            var iframe = $('<img>');
+            iframe.attr('src', response.data[i].url);
+            iframe.appendTo('#gifbox');
+            // $(".searchedgifs").append(response.data[i].rating);
         };
-    //    var urlarray = [];
-    //    console.log(urlarray)
+
     });
 
     
