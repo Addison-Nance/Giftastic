@@ -26,7 +26,7 @@ $(document).on('click', '.moviebutton', function(){
     console.log(searchterm);
 
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchterm + "&api_key=wQJXIAQWtZyJ9vxRJKD1Kly5kx8U1jQF&limit=5"
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchterm + "&api_key=wQJXIAQWtZyJ9vxRJKD1Kly5kx8U1jQF&limit=10"
     $.ajax({
         url:queryURL,
         method: "GET"
@@ -34,12 +34,14 @@ $(document).on('click', '.moviebutton', function(){
         console.log(response)
         for (let i = 0; i< response.data.length; i++) {
             console.log(response.data[i].url);
-           
-        }
-       
+            var img = $('<img id="dynamic">'); //Equivalent: $(document.createElement('img'))
+            img.attr('src', response.data[i].url);
+            img.appendTo('#gifbox');
+        };
+    //    var urlarray = [];
+    //    console.log(urlarray)
     });
 
-    
     
 
 
