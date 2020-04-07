@@ -26,15 +26,20 @@ $(document).on('click', '.moviebutton', function(){
     console.log(searchterm);
 
 
-    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + searchterm + "&api_key=wQJXIAQWtZyJ9vxRJKD1Kly5kx8U1jQF&limit=5");
-    xhr.done(function(data) { console.log("success got data", data)});
-        for (let i = 0; i < array.length; i++) {
-            //grap the url from the response
-            //write the URL to the DOM within an img src tag
-            //dispaly the gif in a "still" state
-            // display the gif's rating below the gif
-
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchterm + "&api_key=wQJXIAQWtZyJ9vxRJKD1Kly5kx8U1jQF&limit=5"
+    $.ajax({
+        url:queryURL,
+        method: "GET"
+    }).then(function(response){
+        console.log(response)
+        for (let i = 0; i< response.data.length; i++) {
+            console.log(response.data[i].url);
+           
         }
+       
+    });
+
+    
     
 
 
