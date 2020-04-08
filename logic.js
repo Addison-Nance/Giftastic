@@ -9,7 +9,8 @@ var topics = ["Hustlers",
 "The Irishman",
 "Pain & Glory",
 ]
-var searchterm="";
+
+
 $(document).ready(function(){
     for (let i = 0; i < topics.length; i++) {
         var buttons = $("<button class='moviebutton'>" + topics[i] + "</button>");
@@ -54,8 +55,18 @@ $(document).on('click', '.moviebutton', function(){
 // set state to still
 //display still image
 
-
-
+$("#searchbutton").on("click",function(){
+    event.preventDefault();
+    $(".moviebutton").remove();
+    var searchtext = $("#searchinput").val()
+    $(topics).push(searchtext);
+    console.log(searchtext)
+    for (let i = 0; i < topics.length; i++) {
+        var buttons = $("<button class='moviebutton'>" + topics[i] + "</button>");
+        buttons.appendTo("#buttonBox");
+};
+console.log(topics);
+});
 //capture search input
 //push to topics array
 //call function to recreate search buttons with new strings
